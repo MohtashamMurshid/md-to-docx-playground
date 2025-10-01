@@ -1,11 +1,74 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<div class="min-h-screen bg-neutral-50">
+		<header
+			class="mx-auto max-w-5xl px-4 py-10 flex items-center justify-between"
+		>
+			<div>
+				<h1 class="text-2xl font-semibold tracking-tight">
+					md-to-docx Playground
+				</h1>
+				<p class="text-sm text-neutral-500">
+					Convert Markdown to DOCX in your browser. Minimal and
+					monotone.
+				</p>
+			</div>
+			<a
+				href="/playground"
+				class="inline-flex items-center rounded-md bg-neutral-900 text-white px-4 py-2 text-sm hover:bg-neutral-800"
+				>Open Playground</a
+			>
+		</header>
+		<section class="mx-auto max-w-5xl px-4 py-4 grid gap-6 md:grid-cols-3">
+			<div class="rounded-lg border border-neutral-200 p-6 bg-white">
+				<h2 class="text-base font-medium mb-2">Fast</h2>
+				<p class="text-sm text-neutral-600">
+					No server. All conversion happens in the browser.
+				</p>
+			</div>
+			<div class="rounded-lg border border-neutral-200 p-6 bg-white">
+				<h2 class="text-base font-medium mb-2">Familiar</h2>
+				<p class="text-sm text-neutral-600">
+					Supports headings, lists, tables, code, images, TOC and
+					more.
+				</p>
+			</div>
+			<div class="rounded-lg border border-neutral-200 p-6 bg-white">
+				<h2 class="text-base font-medium mb-2">Open</h2>
+				<p class="text-sm text-neutral-600">
+					Built on <a
+						class="underline"
+						href="https://www.npmjs.com/package/@mohtasham/md-to-docx"
+						target="_blank"
+						rel="noreferrer">@mohtasham/md-to-docx</a
+					>.
+				</p>
+			</div>
+		</section>
+		<footer
+			class="mx-auto max-w-5xl px-4 py-10 flex items-center justify-between text-sm text-neutral-600"
+		>
+			<div class="flex items-center gap-3">
+				<a
+					class="underline hover:text-neutral-900"
+					href="https://github.com/mohtashammurshidmadani"
+					target="_blank"
+					rel="noreferrer">github</a
+				>
+				<span>•</span>
+				<a
+					class="underline hover:text-neutral-900"
+					href="https://github.com/mohtashammurshidmadani/md-to-docx"
+					target="_blank"
+					rel="noreferrer">repo</a
+				>
+			</div>
+			<a href="/playground" class="underline hover:text-neutral-900"
+				>Go to Playground →</a
+			>
+		</footer>
+	</div>
 </Layout>

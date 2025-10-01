@@ -4,6 +4,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { convertMarkdownToDocx, downloadDocx } from "@mohtasham/md-to-docx";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const DEFAULT_MD = `# Markdown → DOCX
 
@@ -115,6 +117,18 @@ export function Playground() {
           </div>
           <div className="text-sm text-neutral-500">
             Tip: Add "[TOC]" at the top for a table of contents. Use \\pagebreak for a new page.
+          </div>
+          <div>
+            <Label className="mb-2 block">Preview</Label>
+            <div className="doc-surface rounded-md overflow-hidden">
+              <div className="doc-a4">
+                <article className="prose prose-neutral max-w-none dark:prose-invert">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {markdown}
+                  </ReactMarkdown>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
       </div>

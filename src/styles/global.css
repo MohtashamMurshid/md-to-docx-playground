@@ -1,1 +1,45 @@
 @import "tailwindcss";
+
+/* Monotone theme tokens */
+:root {
+  --bg: 248 248 248; /* neutral-50 */
+  --fg: 23 23 23;    /* neutral-900 */
+  --muted: 115 115 115; /* neutral-500 */
+  --card: 255 255 255; /* white */
+  --border: 229 229 229; /* neutral-200 */
+}
+
+.dark {
+  --bg: 10 10 10;    /* near-black */
+  --fg: 235 235 235; /* near-white */
+  --muted: 160 160 160;
+  --card: 20 20 20;
+  --border: 48 48 48;
+}
+
+html, body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
+}
+
+/* Word-like preview container */
+.doc-surface {
+  background: rgb(var(--card));
+  color: rgb(var(--fg));
+  border: 1px solid rgb(var(--border));
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.doc-a4 {
+  width: 816px; /* 8.5in * 96dpi */
+  min-height: 1056px; /* 11in * 96dpi */
+  margin: 0 auto;
+  padding: 96px; /* ~1in margins */
+}
+
+@media (max-width: 900px) {
+  .doc-a4 {
+    width: 100%;
+    padding: 24px;
+  }
+}

@@ -1,0 +1,12 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Playground from "@/components/Playground";
+---
+
+<Layout>
+    <div class="min-h-screen bg-neutral-50">
+        <!-- Mount React component -->
+        <Playground client:load />
+    </div>
+</Layout>
+

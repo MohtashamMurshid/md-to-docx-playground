@@ -1,74 +1,43 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
 ---
 
 <Layout>
-	<div class="min-h-screen bg-neutral-50">
-		<header
-			class="mx-auto max-w-5xl px-4 py-10 flex items-center justify-between"
-		>
-			<div>
-				<h1 class="text-2xl font-semibold tracking-tight">
-					md-to-docx Playground
-				</h1>
-				<p class="text-sm text-neutral-500">
-					Convert Markdown to DOCX in your browser. Minimal and
-					monotone.
-				</p>
-			</div>
-			<a
-				href="/playground"
-				class="inline-flex items-center rounded-md bg-neutral-900 text-white px-4 py-2 text-sm hover:bg-neutral-800"
-				>Open Playground</a
-			>
-		</header>
-		<section class="mx-auto max-w-5xl px-4 py-4 grid gap-6 md:grid-cols-3">
-			<div class="rounded-lg border border-neutral-200 p-6 bg-white">
-				<h2 class="text-base font-medium mb-2">Fast</h2>
-				<p class="text-sm text-neutral-600">
-					No server. All conversion happens in the browser.
-				</p>
-			</div>
-			<div class="rounded-lg border border-neutral-200 p-6 bg-white">
-				<h2 class="text-base font-medium mb-2">Familiar</h2>
-				<p class="text-sm text-neutral-600">
-					Supports headings, lists, tables, code, images, TOC and
-					more.
-				</p>
-			</div>
-			<div class="rounded-lg border border-neutral-200 p-6 bg-white">
-				<h2 class="text-base font-medium mb-2">Open</h2>
-				<p class="text-sm text-neutral-600">
-					Built on <a
-						class="underline"
-						href="https://www.npmjs.com/package/@mohtasham/md-to-docx"
+	<main class="min-h-screen flex items-center">
+		<section class="mx-auto max-w-3xl w-full px-4 py-24 text-center">
+			<h1 class="text-4xl md:text-5xl font-semibold tracking-tight">
+				Markdown → DOCX, instantly
+			</h1>
+			<p class="mt-4 text-base text-neutral-500 md:text-lg">
+				Convert Markdown to a polished .docx right in your browser — no
+				servers, no sign‑ups.
+			</p>
+			<div class="mt-8 flex items-center justify-center gap-3">
+            <Button
+                className="inline-flex items-center gap-2 bg-neutral-900 text-white px-4 py-2 text-sm hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:opacity-90"
+                variant="default"
+            >
+					<a href="/playground">Open Playground</a>
+				</Button>
+				<Button
+					className="text-sm underline hover:opacity-80"
+					variant="outline"
+				>
+					<a
+						href="https://github.com/mohtashammurshidmadani/md-to-docx"
+						rel="noreferrer"
 						target="_blank"
-						rel="noreferrer">@mohtasham/md-to-docx</a
-					>.
-				</p>
+					>
+						View repo →
+					</a>
+				</Button>
+                
 			</div>
+			<p class="mt-6 text-xs text-neutral-400">
+				100% local conversion. Supports headings, lists, tables, code,
+				images & TOC.
+			</p>
 		</section>
-		<footer
-			class="mx-auto max-w-5xl px-4 py-10 flex items-center justify-between text-sm text-neutral-600"
-		>
-			<div class="flex items-center gap-3">
-				<a
-					class="underline hover:text-neutral-900"
-					href="https://github.com/mohtashammurshidmadani"
-					target="_blank"
-					rel="noreferrer">github</a
-				>
-				<span>•</span>
-				<a
-					class="underline hover:text-neutral-900"
-					href="https://github.com/mohtashammurshidmadani/md-to-docx"
-					target="_blank"
-					rel="noreferrer">repo</a
-				>
-			</div>
-			<a href="/playground" class="underline hover:text-neutral-900"
-				>Go to Playground →</a
-			>
-		</footer>
-	</div>
+	</main>
 </Layout>

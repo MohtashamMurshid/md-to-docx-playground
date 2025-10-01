@@ -21,22 +21,88 @@
 html, body {
   background-color: rgb(var(--bg));
   color: rgb(var(--fg));
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-/* Word-like preview container */
+/* Word-like workspace and page */
 .doc-surface {
-  background: rgb(var(--card));
-  color: rgb(var(--fg));
-  border: 1px solid rgb(var(--border));
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  background: transparent;
+  padding: 24px;
+}
+
+.dark .doc-surface {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
 }
 
 .doc-a4 {
+  background: white;
   max-width: 816px; /* 8.5in * 96dpi */
   width: 100%;
   min-height: 1056px; /* 11in * 96dpi */
   margin: 0 auto;
   padding: 72px; /* ~0.75in margins */
+  border: 1px solid rgb(229 229 229);
+  box-shadow: none;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.dark .doc-a4 {
+  background: rgb(30 30 30);
+  border-color: rgb(60 60 60);
+  box-shadow: none;
+}
+
+/* Ensure the preview uses Times New Roman regardless of prose defaults */
+.doc-a4 .prose {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Ensure prose text is visible in dark mode */
+.dark .doc-a4 .prose {
+  color: rgb(229 229 229);
+}
+
+.dark .doc-a4 .prose h1,
+.dark .doc-a4 .prose h2,
+.dark .doc-a4 .prose h3,
+.dark .doc-a4 .prose h4,
+.dark .doc-a4 .prose h5,
+.dark .doc-a4 .prose h6 {
+  color: rgb(245 245 245);
+}
+
+.dark .doc-a4 .prose strong {
+  color: rgb(245 245 245);
+}
+
+.dark .doc-a4 .prose code {
+  color: rgb(250 250 250);
+}
+
+.dark .doc-a4 .prose pre {
+  background-color: rgb(20 20 20);
+  color: rgb(229 229 229);
+}
+
+.dark .doc-a4 .prose a {
+  color: rgb(163 163 163);
+}
+
+.dark .doc-a4 .prose blockquote {
+  color: rgb(163 163 163);
+  border-left-color: rgb(82 82 82);
+}
+
+.dark .doc-a4 .prose hr {
+  border-color: rgb(82 82 82);
+}
+
+.dark .doc-a4 .prose th {
+  color: rgb(245 245 245);
+}
+
+.dark .doc-a4 .prose td {
+  color: rgb(229 229 229);
 }
 
 @media (max-width: 900px) {

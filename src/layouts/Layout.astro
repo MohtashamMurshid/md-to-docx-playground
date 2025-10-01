@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import ThemeToggle from "@/components/ThemeToggle";
 ---
 
 <!doctype html>
@@ -10,9 +11,26 @@ import "../styles/global.css";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>md-to-docx Playground</title>
+		<script is:inline>
+			(function () {
+				try {
+					var stored = localStorage.getItem("theme");
+					var prefers =
+						window.matchMedia &&
+						window.matchMedia("(prefers-color-scheme: dark)")
+							.matches;
+					var theme = stored || (prefers ? "dark" : "light");
+					if (theme === "dark")
+						document.documentElement.classList.add("dark");
+				} catch (e) {}
+			})();
+		</script>
 	</head>
 	<body class="bg-[rgb(var(--bg))] text-[rgb(var(--fg))]">
 		<slot />
+		<div class="fixed top-4 right-4 z-50">
+			<ThemeToggle client:load />
+		</div>
 	</body>
 </html>
 

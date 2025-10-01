@@ -45,8 +45,8 @@ export function Playground() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8 text-neutral-900">
-      <header className="flex items-center justify-between gap-4">
+    <div className="mx-auto max-w-5xl px-4 py-6 text-neutral-900">
+      <header className="flex items-center justify-between gap-4 mb-4">
         <div>
           <h1 className="text-xl font-semibold tracking-tight">md-to-docx Playground</h1>
           <p className="text-sm text-neutral-500">Minimal, monotone, browser-based converter</p>
@@ -54,7 +54,7 @@ export function Playground() {
         <div className="flex items-center gap-2">
           <a
             className="text-sm text-neutral-600 hover:text-neutral-900 underline"
-            href="https://github.com/mohtashammurshidmadani"
+            href="https://github.com/mohtashammurshid"
             target="_blank"
             rel="noreferrer"
           >
@@ -83,8 +83,8 @@ export function Playground() {
 
       <Separator className="my-6" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        <div className="flex flex-col">
           <Label htmlFor="markdown">Markdown</Label>
           <Textarea
             id="markdown"
@@ -99,10 +99,10 @@ export function Playground() {
             </p>
           )}
         </div>
-        <div className="flex flex-col gap-4">
-          <div>
-            <Label>Actions</Label>
-            <div className="mt-2 flex items-center gap-2">
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center justify-between">
+            <Label>Preview</Label>
+            <div className="flex items-center gap-2">
               <Button onClick={handleConvert} disabled={isConverting}>
                 {isConverting ? "Converting..." : "Convert to DOCX"}
               </Button>
@@ -115,19 +115,14 @@ export function Playground() {
               </Button>
             </div>
           </div>
-          <div className="text-sm text-neutral-500">
-            Tip: Add "[TOC]" at the top for a table of contents. Use \\pagebreak for a new page.
-          </div>
-          <div>
-            <Label className="mb-2 block">Preview</Label>
-            <div className="doc-surface rounded-md overflow-hidden">
-              <div className="doc-a4">
-                <article className="prose prose-neutral max-w-none dark:prose-invert">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {markdown}
-                  </ReactMarkdown>
-                </article>
-              </div>
+          <div className="text-xs text-neutral-500">Tip: Add "[TOC]" at the top for a table of contents. Use \\pagebreak for a new page.</div>
+          <div className="doc-surface rounded-md overflow-hidden">
+            <div className="doc-a4">
+              <article className="prose prose-neutral max-w-none dark:prose-invert">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {markdown}
+                </ReactMarkdown>
+              </article>
             </div>
           </div>
         </div>

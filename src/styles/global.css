@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* Monotone theme tokens */
 :root {
@@ -31,10 +32,11 @@ html, body {
 }
 
 .doc-a4 {
-  width: 816px; /* 8.5in * 96dpi */
+  max-width: 816px; /* 8.5in * 96dpi */
+  width: 100%;
   min-height: 1056px; /* 11in * 96dpi */
   margin: 0 auto;
-  padding: 96px; /* ~1in margins */
+  padding: 72px; /* ~0.75in margins */
 }
 
 @media (max-width: 900px) {
